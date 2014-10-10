@@ -1,3 +1,4 @@
-baseurl = "http://yourSiteHere"
+baseurl = "http://cydev.ru/"
 languageCode = "en-us"
-title = "my new hugo site"
+title = "Cydev blog"
+theme = "hyde-x"
