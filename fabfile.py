@@ -12,4 +12,4 @@ def update():
         run('git reset --hard')
         run('git pull origin master')
         run('docker build -t cydev/cydev .')
-        run('docker run --rm -v /src/cydev/public:/public cydev/cydev')
+        run('docker run --rm -v /data/static/cydev:/public cydev/cydev')
