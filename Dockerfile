@@ -4,5 +4,5 @@ RUN go get -v github.com/spf13/hugo
 VOLUME /public
 ADD . /src
 WORKDIR /src
-RUN hugo --theme=hyde-x --baseUrl="https://cydev/"
+RUN hugo --theme=hyde-x --baseUrl="https://cydev.ru/"
 ENTRYPOINT sh copy.sh
