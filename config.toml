@@ -1,4 +1,4 @@
-baseurl = "http://cydev.ru/"
+baseurl = "https://cydev.ru/blog"
 languageCode = "ru-ru"
 title = "Cydev blog"
 theme = "hyde-x"
@@ -7,5 +7,5 @@ theme = "hyde-x"
     name = "ernado"
 
 [params]
-	github = "https://github.com/cydev"
-	tagline = "Automate everything."
+    github = "https://github.com/cydev"
+    tagline = "Automate everything."
