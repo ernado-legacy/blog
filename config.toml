@@ -1,4 +1,4 @@
-baseurl = "https://cydev.ru/blog"
+baseurl = "https://blog.cydev.ru/"
 languageCode = "ru-ru"
 title = "Cydev blog"
 theme = "hyde-x"
