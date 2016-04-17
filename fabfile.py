@@ -1,15 +1,17 @@
-from fabric.api import run, local, env, cd
+from fabric.api import *
+from fabric.colors import *
+from fabric.contrib.console import confirm
+from fabric.contrib.project import rsync_project
+
+import logging
+logging.basicConfig()
+
+env.user = 'cydev'
+env.base_dir = '/blog.cydev'
+env.use_ssh_config = True
+env.hosts = ['cydev.ru']
 
 
-env.hosts = ['root@msk1.cydev.ru:122']
-root = '/src/cydev/'
-
-
-def update():
-    ver = local('git rev-parse HEAD', capture=True)
-    with cd(root):
-        remote_ver = run('git rev-parse HEAD')
-        run('git reset --hard')
-        run('git pull origin master')
-        run('docker build -t cydev/cydev .')
-        run('docker run --rm -v /data/static/cydev:/public cydev/cydev')
+def deploy(branch='master', restart='yes'):
+    with cd(env.base_dir):
+        rsync_project(local_dir="public", remote_dir=env.base_dir, exclude='.git')
